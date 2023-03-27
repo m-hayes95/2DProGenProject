@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyArray;
+    public GameObject enemyPrefab;
+    public GameObject spawnLocation;
     public float spawnRate = 1f;
     public float nextSpawn = 0f;
     public float thrust;
@@ -18,11 +19,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Shoot()
     {
-        int randomIndex = Random.Range(0, enemyArray.Length);
-
         if (Time.time >= nextSpawn)
         {
-            Instantiate(enemyArray[randomIndex], transform.position, Quaternion.identity);
+            Instantiate(enemyPrefab, spawnLocation.transform.position, spawnLocation.transform.rotation);
             nextSpawn = Time.time + 1f / spawnRate;
         }
     }
