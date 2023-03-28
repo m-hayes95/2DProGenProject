@@ -15,8 +15,7 @@ public class AttackingTriangle : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //Rotate the triangle 
-        transform.Rotate(new Vector3(0,0, 1), rotateSpeed * Time.deltaTime);
+        
         rb.AddForce(transform.forward * triangleForce, ForceMode2D.Force);
 
     }

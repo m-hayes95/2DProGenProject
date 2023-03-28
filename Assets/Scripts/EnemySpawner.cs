@@ -14,7 +14,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        
         Shoot();
+        
     }
 
     private void Shoot()
